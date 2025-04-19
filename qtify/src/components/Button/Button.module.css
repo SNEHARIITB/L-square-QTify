@@ -1,0 +1,23 @@
+.button {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+  }
+  
+  .button:hover {
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  

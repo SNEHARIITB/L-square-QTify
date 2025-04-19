@@ -1,0 +1,16 @@
+.navbar {
+    margin: 0px;
+    background-color: var(--color-primary);
+    height: 74px;
+    width: 100%;
+    padding: 0px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
