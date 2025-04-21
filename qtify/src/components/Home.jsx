@@ -1,5 +1,7 @@
 import Navbar from "./Navbar/Navbar";
 import Hero from "./Hero/Hero";
+import GridDis from "./Grid";
+
 
 
 
@@ -9,6 +11,8 @@ const Home = () => {
         <div>
         <Navbar/>
         <Hero/>
+        
+        <GridDis/>
         </div>
     );
 };
