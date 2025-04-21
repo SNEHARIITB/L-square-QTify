@@ -1,7 +1,7 @@
 
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 import CustomCard from "./Card/Card";
 import Box from '@mui/material/Box';
 import Section from "./Section/Section";
@@ -30,6 +30,10 @@ const GridDis = () => {
             <Section
                 title="Top Albums"
                 fetchUrl="https://qtify-backend-labs.crio.do/albums/top"
+            />
+            <Section
+                title="New Albums"
+                fetchUrl="https://qtify-backend-labs.crio.do/albums/new"
             />
         </Box>
         
