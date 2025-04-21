@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from '@mui/material/Button';
 import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css"
 import { Grid } from "@mui/system";
 
@@ -37,20 +38,27 @@ const Section = ({ title, fetchUrl }) => {
       </div>
 
 
-
-      <Grid container className={styles.grid}
-              sx={{
-                overflow: "hidden",
-                transition: "max-height 0.5s ease",
-                maxHeight: collapsed ? 1000 : 232, // 232px shows one row
-              }}
-      >
-        {items.map((item) => (
-          <Grid key={item.id}>
-            <Card data={item} />
+      {!collapsed ? 
+        (
+          <Carousel
+            data={items}
+            renderComponent={(item) => <Card data={item} />}
+          />
+        )
+        :
+        (
+          <Grid container className={styles.grid}
+              sx={ { overflow: "hidden", transition: "max-height 0.5s ease", maxHeight: collapsed ? 1000 : 232, } }
+          >
+            {items.map((item) => (
+              <Grid key={item.id}>
+                <Card data={item} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        )
+      }
+
 
     </section>
   );

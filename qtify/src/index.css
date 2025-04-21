@@ -8,3 +8,5 @@
 body{
   background-color: #121212;
 }
+@import 'swiper/css';
+@import 'swiper/css/navigation';
