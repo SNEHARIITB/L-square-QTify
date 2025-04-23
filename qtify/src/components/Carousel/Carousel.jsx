@@ -39,7 +39,7 @@ const Carousel = ({ data = [], renderComponent}) => {
     }, []);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} sx = {{marginLeft: '50px'}}>
     <Swiper
       modules={[Navigation]}
       navigation={{
@@ -57,7 +57,7 @@ const Carousel = ({ data = [], renderComponent}) => {
       ))}
         {/* <div className={`${styles.navButton} swiper-button-prev`}>{LeftNav}</div>
         <div className={`${styles.navButton} swiper-button-next`}>{RightNav}</div> */}
-      <img src={leftBtn} className={`${styles.navButton} swiper-button-prev`} alt="Previous" />
+      <img src={leftBtn} className={`${styles.navButton} swiper-button-prev ${styles.leftbtn}`} alt="Previous" />
       <img src={rightBtn} className={`${styles.navButton} swiper-button-next`} alt="Next" />
     </Swiper>
     </div>

@@ -6,7 +6,7 @@
 .navButton {
     position: absolute;
     top: 45%;
-    z-index: 10;
+    z-index: 1000;
     width: 30px;
     height: 30px;
     display: flex;
@@ -16,9 +16,11 @@
 }
 
 .swiper-button-prev {
-    left: -20px;
+    left: -10px;
   }
-  
+  .leftbtn{
+    left: -2px !important;
+  }
   .swiper-button-next {
     right: -20px;
   }

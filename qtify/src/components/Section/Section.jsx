@@ -3,10 +3,11 @@ import axios from "axios";
 import Button from '@mui/material/Button';
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
+import Tabs from "../Tabs/Tabs";
 import styles from "./Section.module.css"
 import { Grid } from "@mui/system";
 
-const Section = ({ title, fetchUrl }) => {
+const Section = ({ title, fetchUrl, songs = false  }) => {
 
   const [items, setItems] = useState([]);
   const [collapsed, setCollapsed] = useState(false);
@@ -23,6 +24,7 @@ const Section = ({ title, fetchUrl }) => {
     fetchData();
   }, [fetchUrl]);
 
+  //console.log("from section:",songs)
   return (
     <section className={styles.section}>
 
@@ -33,29 +35,32 @@ const Section = ({ title, fetchUrl }) => {
           onClick={() => setCollapsed(!collapsed)}
           className={styles.collapse}
         >
-          {collapsed ? "Collapse" : "Show all"}
+          {!songs && (collapsed ? "Collapse" : "Show all")}
         </Button>
       </div>
 
 
-      {!collapsed ? 
-        (
-          <Carousel
-            data={items}
-            renderComponent={(item) => <Card data={item} />}
-          />
-        )
+      {songs ? <Tabs data={items} songs={songs}/>
         :
-        (
-          <Grid container className={styles.grid}
-              sx={ { overflow: "hidden", transition: "max-height 0.5s ease", maxHeight: collapsed ? 1000 : 232, } }
-          >
-            {items.map((item) => (
-              <Grid key={item.id}>
-                <Card data={item} />
-              </Grid>
-            ))}
-          </Grid>
+        (!collapsed ? 
+          (
+            <Carousel
+              data={items}
+              renderComponent={(item) => <Card data={item} songs={songs}/>}
+            />
+          )
+          :
+          (
+            <Grid container className={styles.grid}
+                sx={ { overflow: "hidden", transition: "max-height 0.5s ease", maxHeight: collapsed ? 1000 : 232, } }
+            >
+              {items.map((item) => (
+                <Grid key={item.id}>
+                  <Card data={item} songs={songs} />
+                </Grid>
+              ))}
+            </Grid>
+          )
         )
       }
 

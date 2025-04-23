@@ -1,0 +1,14 @@
+.main{
+    width: 100%;
+    color: var(--color-white);
+}
+.tablist{
+    color: var(--color-white) !important;
+}
+.tablistBox{
+    /* sx={{ borderBottom: 1, borderColor: 'divider' }} */
+    border-bottom: 1;
+}
+.tab{
+    color: var(--color-white) !important;
+}

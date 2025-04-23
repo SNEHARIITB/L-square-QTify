@@ -26,7 +26,7 @@ const GridDis = () => {
     
     return(
         <>
-        <Box>
+        <Box sx={{marginLeft: '10px'}}>
             <Section
                 title="Top Albums"
                 fetchUrl="https://qtify-backend-labs.crio.do/albums/top"
@@ -34,6 +34,11 @@ const GridDis = () => {
             <Section
                 title="New Albums"
                 fetchUrl="https://qtify-backend-labs.crio.do/albums/new"
+            />
+            <Section
+            title="Songs"
+            fetchUrl="https://qtify-backend-labs.crio.do/songs"
+            songs = "true"
             />
         </Box>
         

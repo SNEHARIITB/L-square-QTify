@@ -11,8 +11,9 @@ import CardActions from '@mui/material/CardActions';
 //import {MuiCard} from "@mui/material";
 import styles from "./Card.module.css";
 
-const CustomCard = ({data}) => {
+const CustomCard = ({data, songs}) => {
     //console.log("inside card:", data )
+    //console.log(songs)
 
     return(
         // <Card className={styles.Card}>
@@ -45,7 +46,7 @@ const CustomCard = ({data}) => {
                 <Box className={styles.ChipBox}>
                     <Chip
                         className={styles.Chip}
-                        label={data.follows}
+                        label={songs ? `${data.likes} Likes` : `${data.follows} Follows`}
                         variant="outlined"
                     />
                 </Box>
